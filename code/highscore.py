@@ -2,7 +2,7 @@ import pygame
 
 class Highscore:
     def __init__(self, x, y, font, size):
-        with open("Python game/Other files/highscore.txt", "r") as f:
+        with open("Other files/highscore.txt", "r") as f:
             self.value = int(f.read())
         self.x = x
         self.y = y
@@ -14,7 +14,7 @@ class Highscore:
 
     def increase_value(self):
         self.value += 1
-        with open("Python game/Other files/highscore.txt", "w") as f:
+        with open("Other files/highscore.txt", "w") as f:
             f.write(str(self.value))
     
     def teleport_away(self):

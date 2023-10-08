@@ -15,11 +15,11 @@ screen = pygame.display.set_mode((width, height))
 
 # Title and Icon
 pygame.display.set_caption("Space Game")
-icon = pygame.image.load('Python game/Images/icon.png')
+icon = pygame.image.load('Images/icon.png')
 pygame.display.set_icon(icon)
 
 # Background
-background = pygame.image.load("Python game/Images/background2.png")
+background = pygame.image.load("Images/background2.png")
 
 # Main Menu Variables
 newGame_button = Button(320, 245, "New Game", 160, 40)
@@ -27,9 +27,9 @@ continueGame_button = Button(290, 270, "Continue Game", 220, 40)
 menuQuit_button = Button(350, 295, "Quit", 100, 40)
 
 # Game Variables
-player = Player("Python game/Images/player.png", 368, 500, False, False)
-enemies = [Enemy("Python game/Images/alien.png") for _ in range(1)]
-bullet = Bullet("Python game/Images/bullet.png", player.x + 16, player.y - 16, False)
+player = Player("Images/player.png", 368, 500, False, False)
+enemies = [Enemy("Images/alien.png") for _ in range(1)]
+bullet = Bullet("Images/bullet.png", player.x + 16, player.y - 16, False)
 score = Score(0, 0, 0, "comicsans", 20)
 highscore = Highscore(0, 20, "comicsans", 20)
 gameover = Gameover(218, 190, "comicsans", 70)
@@ -158,7 +158,7 @@ def Game():
                 highscore.teleport_away()
                 gameover.draw(screen)
                 pause_button.teleport_away()
-                background = pygame.image.load("Python game/Images/pause_background2.png")
+                background = pygame.image.load("Images/pause_background2.png")
                 break
 
         # Bullet Movement
@@ -189,32 +189,32 @@ def Game():
         # Pause Game
         if paused == False:
             if pause_button.draw(screen):
-                background = pygame.image.load("Python game/Images/pause_background2.png")
-                player.change_image("Python game/Images/pause_player.png")
+                background = pygame.image.load("Images/pause_background2.png")
+                player.change_image("Images/pause_player.png")
                 for enemy in enemies:
-                    enemy.change_image("Python game/Images/pause_alien.png")
-                bullet.change_image("Python game/Images/pause_bullet.png")
+                    enemy.change_image("Images/pause_alien.png")
+                bullet.change_image("Images/pause_bullet.png")
                 pause_button.change_text("Resume")
                 pause_button.teleport_center(337.75, 220)
                 paused = True
         if paused == True:
             if pause_button.draw(screen):
-                background = pygame.image.load("Python game/Images/background2.png")
-                player.change_image("Python game/Images/player.png")
+                background = pygame.image.load("Images/background2.png")
+                player.change_image("Images/player.png")
                 for enemy in enemies:
-                    enemy.change_image("Python game/Images/alien.png")
-                bullet.change_image("Python game/Images/bullet.png")
+                    enemy.change_image("Images/alien.png")
+                bullet.change_image("Images/bullet.png")
                 pause_button.change_text("Pause")
                 pause_button.set_original()
                 paused = False
             if quit_button.draw(screen):
                     pygame.quit()
             if mainMenu_button.draw(screen):
-                background = pygame.image.load("Python game/Images/background2.png")
-                player.change_image("Python game/Images/player.png")
+                background = pygame.image.load("Images/background2.png")
+                player.change_image("Images/player.png")
                 for enemy in enemies:
-                    enemy.change_image("Python game/Images/alien.png")
-                bullet.change_image("Python game/Images/bullet.png")
+                    enemy.change_image("Images/alien.png")
+                bullet.change_image("Images/bullet.png")
                 pause_button.change_text("Pause")
                 pause_button.set_original()
                 paused = False
